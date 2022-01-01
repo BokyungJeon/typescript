@@ -22,7 +22,8 @@
   };
   type LoginState = SuccessState | FailState;
 
-  function login(): LoginState {
+  function login(): LoginState { 
+    // function login(id: string, password: string): Promise<LoginState> {}
     return {
       response: {
         body: 'logged in!',

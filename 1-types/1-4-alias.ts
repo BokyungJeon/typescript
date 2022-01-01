@@ -2,7 +2,7 @@
   /**
    * Type Aliases
    */
-  type Text = string;
+  type Text = string; // 타입 정의 가능
   const name: Text = 'ellie';
   const address: Text = 'korea';
   type Num = number;
