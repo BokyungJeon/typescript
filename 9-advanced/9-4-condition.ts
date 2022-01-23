@@ -1,4 +1,5 @@
-type Check<T> = T extends string? boolean : number;
+// 조건이 맞으면 어떤 타입이다로 사용 가능.
+type Check<T> = T extends string? boolean : number; // T가 string을 상속하면 boolean, 아니면 number
 type Type = Check<string>; // boolean
 
 type TypeName<T> = T extends string

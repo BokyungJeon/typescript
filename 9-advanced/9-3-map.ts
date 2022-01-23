@@ -14,11 +14,11 @@
 //     readonly author: string;
 //     readonly description: string;
 // }
+// 타입이 추가될때마다 일일이 찾아서 수정해주는 대신 map의 기능을 이용해 맵타입을 만든다.
 
-// 일일이 찾아서 수정해주는 대신 map의 기능을 이용해 맵타입을 만든다.
-// [1, 2].map(item => item * item); // [1, 4]
+// 배열의 map: [1, 2].map(item => item * item); // [1, 4]
     type Optional<T> = {
-        [P in keyof T]?: T[P] // for ... in
+        [P in keyof T]?: T[P] // 타입 오브젝트 안에서 []기호를 쓰면 for ... in 과 같은 의미. 오브젝트의 모든 키를 하나하나 돈다.
     };
 
     type ReadOnly<T> = {
@@ -28,7 +28,7 @@
     type VideoOptional = Optional<Video>;
     const videoOp: VideoOptional = {
         title: 'hi',
-        // animal: // error
+        // animal: // Video안에 있는 타입이 아니므로 error
     }
 
     type Animal = {
@@ -44,6 +44,7 @@
         title: 'hi',
         author: 'ellie',
     }
+    
 // video.title = 'hello' // error 변경불가
     type Nullable<T> = { [P in keyof T]: T[P] | null };
     const obj2: Nullable<Video> = {

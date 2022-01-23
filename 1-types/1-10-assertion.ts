@@ -17,7 +17,7 @@
   function findNumbers(): number[] | undefined {
     return undefined;
   }
-  const numbers = findNumbers()!; // 장담할 때 !
+  const numbers = findNumbers()!; // 장담할 때 ! 혹은
   numbers!.push(2); // 장담할 때 ! 😱 
 
   const button = document.querySelector('class')!; // 정말정말 장담할 때. 버튼무조건있을 때

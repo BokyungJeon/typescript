@@ -4,7 +4,9 @@
         hasMilk: boolean;
     };
 
-    interface CoffeeMaker {
+    // 인터페이스 이름 앞에 I를 붙여(ICoffeeMaker)사용하기도 하고 
+    // 클래스 이름을 인터페이스와 다르게 지어 사용하기도 함. 인터페이스는 사용자가 사용하므로 후자 선호.
+    interface CoffeeMaker { 
         makeCoffee(shots: number): CoffeeCup;
     }
 
@@ -37,7 +39,7 @@
             console.log('cleaning the machine...🧼')
         }
 
-        private grindBeans(shots: number) {
+        private grindBeans(shots: number): void {
             console.log(`grinding beans for ${shots}`);
             if(this.coffeeBeans < shots * CoffeeMachine.BEANS_GRAM_PER_SHOT) {
                 throw new Error('Not enough coffee beans!');
